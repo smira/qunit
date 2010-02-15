@@ -31,7 +31,7 @@ ol#qunit-tests li li{
 	background-color:#fff;
 	list-style-position: inside;
 	padding:0.4em 0.5em 0.4em 0.5em;
-	white-space: pre-wrap;
+	white-space: pre;
 }
 
 ol#qunit-tests li li.pass{
