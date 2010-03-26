@@ -969,7 +969,7 @@ QUnit.jsDump = (function() {
 			return type;
 		},
 		separator:function() {
-			return this.multiline ?	this.HTML ? '<br />' : '\n' : this.HTML ? '&nbsp;' : ' ';
+			return this.multiline ?	this.HTML ? '<br />' : this.linebreak : this.HTML ? '&nbsp;' : ' ';
 		},
 		indent:function( extra ) {// extra can be a number, shortcut for increasing-calling-decreasing
 			if ( !this.multiline )
@@ -1060,9 +1060,10 @@ QUnit.jsDump = (function() {
 			name:'name',
 			'class':'className'
 		},
-		HTML:true,//if true, entities are escaped ( <, >, \t, space and \n )
+		HTML:false,//if true, entities are escaped ( <, >, \t, space and \n )
 		indentChar:'   ',//indentation unit
-		multiline:true //if true, items in a collection, are separated by a \n, else just a space.
+		multiline:true, //if true, items in a collection, are separated by a \n, else just a space.
+		linebreak: /*@cc_on '\r' || @*/ '\n'  
 	};
 
 	return jsDump;
